@@ -92,12 +92,13 @@ SDL_BlitSurface(a.secondplayer,NULL,opt.resolution,&(a.possecondplayer));
 
 void selectioninput(int x,options opt,input in,background back,selection selec){
 SDL_BlitSurface(back.background[2],NULL,opt.resolution,&(back.posbackground));
-selec.posselectleft.x=1243;int y=1;
+selec.posselectleft.x=1351;int y=1;
 selec.posselectright.x=575;
 SDL_Surface *imager,*imagel;
 imagel=selec.selectionsmallleft;
 imager=selec.selectionsmallright;
 if(x==0){
+y=0;
 selec.posselectleft.y=0;
 selec.posselectright.y=0;
 selec.posselectleft.x=0;
@@ -105,33 +106,39 @@ selec.posselectright.x=0;
 imagel=selec.selectionbigleft; ;
 imager=selec.selectionbigright ;
 }else if(x==1){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
+selec.posselectleft.y=267;
+
 }else if(x==2){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
+selec.posselectleft.y=423;
+
 
 }else if(x==3){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
+selec.posselectleft.y=590;
+
 
 }else if(x==4){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
+selec.posselectleft.y=750;
+
 
 }else if(x==5){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
+selec.posselectleft.y=919;
+
 
 }else  if(x==6){
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
-selec.posselectleft.x=0;
-selec.posselectright.x=0;}
-affichageinput(in,opt);
+y=0;
+selec.posselectleft.y=965;
+selec.posselectleft.x=243;
+selec.posselectright.y=965;
+selec.posselectright.x=8;}
+affichageinput(in,opt);  
+if (x!=-1){
 SDL_BlitSurface(imagel,NULL,opt.resolution,&(selec.posselectleft));
+if (y!=1)
 SDL_BlitSurface(imager,NULL,opt.resolution,&(selec.posselectright));
-SDL_Flip(opt.resolution);
 }
+SDL_Flip(opt.resolution);
+
+}
+
 
 

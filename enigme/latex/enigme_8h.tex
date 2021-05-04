@@ -1,0 +1,170 @@
+\hypertarget{enigme_8h}{}\doxysection{enigme.\+h File Reference}
+\label{enigme_8h}\index{enigme.h@{enigme.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+ttf.\+h$>$}\newline
+Include dependency graph for enigme.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enigme_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{enigme_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structenigme}{enigme}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{enigme_8h_a72d9a99b7eec740261b4bd534a9a0d81}{init\+\_\+enigme}} (\mbox{\hyperlink{structenigme}{enigme}} $\ast$enig, int ancienne\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{enigme_8h_aa4d1273f2e5041afc74bd0896faf10a4}{remplir\+\_\+fichier}} (char fichier\+\_\+question\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{enigme_8h_a956142a6870445722d155419e4f641dc}{afficher\+\_\+enigme}} (\mbox{\hyperlink{structenigme}{enigme}} $\ast$enig, int $\ast$ancienne, char fichier\+\_\+question\mbox{[}$\,$\mbox{]}, int $\ast$ligne)
+\item 
+int \mbox{\hyperlink{enigme_8h_a6e6cb21aa6007400f7cf48e175bc65f8}{solution}} (int q)
+\item 
+int \mbox{\hyperlink{enigme_8h_a32dff27ef6d1bebf1ced9dad228cfde2}{resolution}} (int $\ast$affiche)
+\item 
+void \mbox{\hyperlink{enigme_8h_a2df04aa0a7c3618416ebfa448a843d77}{afficher\+\_\+resultat}} (\mbox{\hyperlink{structenigme}{enigme}} $\ast$enig, int \mbox{\hyperlink{enigme_8h_a6e6cb21aa6007400f7cf48e175bc65f8}{solution}}, int \mbox{\hyperlink{enigme_8h_a32dff27ef6d1bebf1ced9dad228cfde2}{resolution}})
+\item 
+void \mbox{\hyperlink{enigme_8h_a78ff2d4ae0b49635dd7a63c719ea3508}{ffree}} (\mbox{\hyperlink{structenigme}{enigme}} $\ast$enig)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{enigme_8h_a956142a6870445722d155419e4f641dc}\label{enigme_8h_a956142a6870445722d155419e4f641dc}} 
+\index{enigme.h@{enigme.h}!afficher\_enigme@{afficher\_enigme}}
+\index{afficher\_enigme@{afficher\_enigme}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_enigme()}{afficher\_enigme()}}
+{\footnotesize\ttfamily void afficher\+\_\+enigme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenigme}{enigme}} $\ast$}]{enig,  }\item[{int $\ast$}]{ancienne,  }\item[{char}]{fichier\+\_\+question\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{ligne }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{enigme_8h_a2df04aa0a7c3618416ebfa448a843d77}\label{enigme_8h_a2df04aa0a7c3618416ebfa448a843d77}} 
+\index{enigme.h@{enigme.h}!afficher\_resultat@{afficher\_resultat}}
+\index{afficher\_resultat@{afficher\_resultat}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_resultat()}{afficher\_resultat()}}
+{\footnotesize\ttfamily void afficher\+\_\+resultat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenigme}{enigme}} $\ast$}]{enig,  }\item[{int}]{solution,  }\item[{int}]{resolution }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file enigme.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{enigme_8h_a2df04aa0a7c3618416ebfa448a843d77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{enigme_8h_a2df04aa0a7c3618416ebfa448a843d77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enigme_8h_a78ff2d4ae0b49635dd7a63c719ea3508}\label{enigme_8h_a78ff2d4ae0b49635dd7a63c719ea3508}} 
+\index{enigme.h@{enigme.h}!ffree@{ffree}}
+\index{ffree@{ffree}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{ffree()}{ffree()}}
+{\footnotesize\ttfamily void ffree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenigme}{enigme}} $\ast$}]{enig }\end{DoxyParamCaption})}
+
+
+
+Definition at line 161 of file enigme.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{enigme_8h_a78ff2d4ae0b49635dd7a63c719ea3508_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enigme_8h_a72d9a99b7eec740261b4bd534a9a0d81}\label{enigme_8h_a72d9a99b7eec740261b4bd534a9a0d81}} 
+\index{enigme.h@{enigme.h}!init\_enigme@{init\_enigme}}
+\index{init\_enigme@{init\_enigme}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{init\_enigme()}{init\_enigme()}}
+{\footnotesize\ttfamily void init\+\_\+enigme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenigme}{enigme}} $\ast$}]{enig,  }\item[{int}]{ancienne\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file enigme.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{enigme_8h_a72d9a99b7eec740261b4bd534a9a0d81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enigme_8h_aa4d1273f2e5041afc74bd0896faf10a4}\label{enigme_8h_aa4d1273f2e5041afc74bd0896faf10a4}} 
+\index{enigme.h@{enigme.h}!remplir\_fichier@{remplir\_fichier}}
+\index{remplir\_fichier@{remplir\_fichier}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{remplir\_fichier()}{remplir\_fichier()}}
+{\footnotesize\ttfamily void remplir\+\_\+fichier (\begin{DoxyParamCaption}\item[{char}]{fichier\+\_\+question\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file enigme.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{enigme_8h_aa4d1273f2e5041afc74bd0896faf10a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enigme_8h_a32dff27ef6d1bebf1ced9dad228cfde2}\label{enigme_8h_a32dff27ef6d1bebf1ced9dad228cfde2}} 
+\index{enigme.h@{enigme.h}!resolution@{resolution}}
+\index{resolution@{resolution}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{resolution()}{resolution()}}
+{\footnotesize\ttfamily int resolution (\begin{DoxyParamCaption}\item[{int $\ast$}]{affiche }\end{DoxyParamCaption})}
+
+
+
+Definition at line 116 of file enigme.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enigme_8h_a32dff27ef6d1bebf1ced9dad228cfde2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enigme_8h_a6e6cb21aa6007400f7cf48e175bc65f8}\label{enigme_8h_a6e6cb21aa6007400f7cf48e175bc65f8}} 
+\index{enigme.h@{enigme.h}!solution@{solution}}
+\index{solution@{solution}!enigme.h@{enigme.h}}
+\doxysubsubsection{\texorpdfstring{solution()}{solution()}}
+{\footnotesize\ttfamily int solution (\begin{DoxyParamCaption}\item[{int}]{q }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file enigme.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{enigme_8h_a6e6cb21aa6007400f7cf48e175bc65f8_icgraph}
+\end{center}
+\end{figure}
