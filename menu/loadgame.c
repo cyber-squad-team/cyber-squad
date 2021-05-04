@@ -61,7 +61,7 @@ selec.posselectleft.y=572;y=0;
 }
 else if(x==2){
 selec.posselectleft.x=1233;
-selec.posselectright.x=650;
+selec.posselectright.x=60;
 selec.posselectleft.y=820;
 selec.posselectright.y=820;
 imagel=selec.selectionbigleft;

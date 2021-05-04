@@ -117,7 +117,7 @@ background initialisation_background(){
 background a;
 a.background[0]=IMG_Load("photos/mainmenu/no selection.png");
 a.background[1]=IMG_Load("photos/options/no selection.png");
-a.background[2]=IMG_Load("photos/options/input/common/no selection.png");
+a.background[2]=IMG_Load("photos/options/input/common/nono.png");
 a.background[3]=IMG_Load("photos/play/no selection.png");
 a.background[4]=IMG_Load("photos/options/resolution/no selection.png");
 a.background[5]=IMG_Load("photos/play/new game/no_selection1.png");
