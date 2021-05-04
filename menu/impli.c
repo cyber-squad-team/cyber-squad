@@ -27,7 +27,7 @@ case SDLK_ESCAPE:
     case SDL_QUIT:
     continuer=0;
     break;
-    
+  
 
 case  SDL_KEYDOWN:
 switch (event.key.keysym.sym)
@@ -42,7 +42,7 @@ x=next(x,3,0);
 affichage(x,selec,back,opt);
 break;
 case SDLK_RETURN:
-if(x==0){}
+if(x==0){menuplay(&opt,&continuer,back,selec);}
 else if(x==1){menuoption(&opt,&continuer,back,selec);}
 else {continuer=0;}
 break;
@@ -69,7 +69,7 @@ a.soundlv=4;
 a.son=Mix_LoadWAV("BREF.wav");
 a.musique=Mix_LoadMUS("sound/music2.mp3");
 a.re=0;
-
+a.nbdjoueur=1;
 /*a.inpu[1].right=275;
 a.inpu[1].left=276;
 a.inpu[1].jump=273;
@@ -120,6 +120,7 @@ a.background[1]=IMG_Load("photos/options/no selection.png");
 a.background[2]=IMG_Load("photos/options/input/common/no selection.png");
 a.background[3]=IMG_Load("photos/play/no selection.png");
 a.background[4]=IMG_Load("photos/options/resolution/no selection.png");
+a.background[5]=IMG_Load("photos/play/new game/no_selection1.png");
 a.posbackground.x=0;
 a.posbackground.y=0;
 
@@ -139,8 +140,7 @@ a.sound[2]=IMG_Load("photos/options/son animation/3son.png");
 a.sound[3]=IMG_Load("photos/options/son animation/4son.png");
 a.sound[4]=IMG_Load("photos/options/son animation/5son.png");
 a.sound[5]=IMG_Load("photos/options/son animation/6son.png");
-a.mark=IMG_Load("photos/resolution/mark.png");
-
+a.mark=IMG_Load("photos/options/resolution/mark.png");
 a.possound[0].x=720;
 a.possound[0].y=529;
 a.possound[1].x=809;
@@ -153,7 +153,7 @@ a.possound[4].x=1068;
 a.possound[4].y=529;
 a.possound[5].x=1151;
 a.possound[5].y=529;
-a.posnoeffect.x=887;
+a.posnoeffect.x=905;
 a.posnoeffect.y=966;
 a.posnosound.x=1680;
 a.posnosound.y=966;

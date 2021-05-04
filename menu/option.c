@@ -11,7 +11,6 @@
 void menuoption(options *opt,int *continu,background back,selection selec){
 int continuer=1;int x=-1;
 affichageoptions(x,*opt,back,selec);
-Mix_PlayMusic(opt->music,-1);
 SDL_Event event;
 while (continuer)
 {
@@ -38,12 +37,12 @@ break;
 
 case SDLK_RETURN :
 if(x==0){menuresolution(opt, continu, &continuer, back,selec);}
-else if((x==1)&&(opt->soundlv!=6)){opt->soundlv++;affichageoptions(x,*opt,back,selec);  Mix_Volume(1,150-25*(6-opt->soundlv));}
-else if((x==2)&&(opt->soundlv!=0)){opt->soundlv--;affichageoptions(x,*opt,back,selec);Mix_Volume(1,150-25*(6-opt->soundlv));}
+else if((x==1)&&(opt->soundlv<6)){opt->soundlv++;opt->music=1;affichageoptions(x,*opt,back,selec);  Mix_Volume(1,150-25*(6-opt->soundlv));}
+else if((x==2)&&(opt->soundlv>0)){opt->soundlv--;if(opt->soundlv==0){opt->music=0;};printf("%d,%d ",opt->soundlv,opt->music);affichageoptions(x,*opt,back,selec);Mix_Volume(1,150-25*(6-opt->soundlv));}
 else if(x==3){maininput(*opt,continu,&continuer,back,selec);}
 else if(x==4){
     opt->music=!opt->music; 
-    if(opt->music==0){opt->oldsoundlv=opt->soundlv;opt->soundlv=0;}else{opt->soundlv=opt->oldsoundlv;}
+    if(opt->music==0){opt->oldsoundlv=opt->soundlv;opt->soundlv=0;}else{if(opt->oldsoundlv==0){opt->oldsoundlv=1;}opt->soundlv=opt->oldsoundlv;}
     affichageoptions(x,*opt,back,selec);Mix_Volume(1,0);
     }
 else if(x==5){opt->effect=!opt->effect; 

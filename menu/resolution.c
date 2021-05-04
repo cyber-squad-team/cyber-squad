@@ -38,7 +38,7 @@ break;
 
 case SDLK_RETURN :
 if((x==0)&&(opt->re!=0)){opt->re=0;affichageresolution(x,*opt,back,selec);}
-else if((x==1)&&(opt->re!=0)){opt->re=1;affichageresolution(x,*opt,back,selec);}
+else if((x==1)&&(opt->re!=1)){opt->re=1;affichageresolution(x,*opt,back,selec);}
 else if(x==2){continuer=0;x=-1;affichageoptions(x,*opt,back,selec);}
 break;
 
@@ -47,11 +47,32 @@ break;
 }}}
 void affichageresolution(int x,options opt,background back,selection selec){
 SDL_BlitSurface(back.background[4],NULL,opt.resolution,&(back.posbackground));
-if(opt.re==0){selec.posmark.x=0;
-              selec.posmark.y=0;
-    SDL_BlitSurface(selec.mark,NULL,opt.resolution,&(selec.posmark));}
-else{selec.posmark.x=0;
-    selec.posmark.y=0;SDL_BlitSurface(selec.mark,NULL,opt.resolution,&(selec.posmark)); }
+int y=1;
+if(opt.re==0){selec.posmark.x=1410;
+              selec.posmark.y=500;}
+else{selec.posmark.x=1410;
+    selec.posmark.y=660;}
+SDL_BlitSurface(selec.mark,NULL,opt.resolution,&(selec.posmark));
+selec.posselectleft.x=1539;
+
+SDL_Surface *imager,*imagel;
+imagel=selec.selectionsmallleft;
+imager=selec.selectionsmallright;
+if(x==0){
+selec.posselectleft.y=486;
+}else if(x==1){
+selec.posselectleft.y=640;
+}else if(x==2){
+selec.posselectleft.x=243;
+selec.posselectright.x=10;
+selec.posselectleft.y=966;
+selec.posselectright.y=966;
+imagel=selec.selectionsmallleft;
+imager=selec.selectionsmallright;y=0;
+}
+if(x!=-1){
+SDL_BlitSurface(imagel,NULL,opt.resolution,&(selec.posselectleft));
+if(y==0)SDL_BlitSurface(imager,NULL,opt.resolution,&(selec.posselectright));}
 
 
 

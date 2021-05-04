@@ -13,7 +13,7 @@ SDL_Surface *selectionsmallright,*selectionbigright,*selectionbigleft,*selection
 
 }selection;
 typedef struct{
-SDL_Surface *background[5];
+SDL_Surface *background[6];
 SDL_Rect posbackground;
 
 
@@ -34,6 +34,7 @@ int oldsoundlv;
 int music;
 int effect;
 int re;
+int nbdjoueur;
 SDL_Surface *resolution;
 Mix_Chunk *son;
  Mix_Music *musique;
@@ -70,3 +71,12 @@ void menuresolution(options *opt,int *continu,int *continuu,background back,sele
 void affichageresolution(int x,options opt,background back,selection selec);
 
 /*resolution*/
+/*play*/
+void menuplay(options *opt,int *continuu,background back,selection selec); 
+void affichageplay(int x,options opt,background back,selection selec);
+/*play*/
+/*loadgame */
+void menuloadgame(options *opt,int *continu,int *continuu,background back,selection selec);
+
+void affichageloadgame(int x,options opt,background back,selection selec);
+/*loadgame */

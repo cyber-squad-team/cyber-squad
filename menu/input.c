@@ -77,7 +77,6 @@ return a;}
 
 
 void affichageinput(input a,options opt){
-
 SDL_BlitSurface(a.d,NULL,opt.resolution,&(a.posd));
 SDL_BlitSurface(a.z,NULL,opt.resolution,&(a.posz));
 SDL_BlitSurface(a.q,NULL,opt.resolution,&(a.posq));
@@ -90,6 +89,9 @@ SDL_BlitSurface(a.secondplayer,NULL,opt.resolution,&(a.possecondplayer));
 }
 
 
+
+
+
 void selectioninput(int x,options opt,input in,background back,selection selec){
 SDL_BlitSurface(back.background[2],NULL,opt.resolution,&(back.posbackground));
 selec.posselectleft.x=1351;int y=1;
@@ -99,12 +101,10 @@ imagel=selec.selectionsmallleft;
 imager=selec.selectionsmallright;
 if(x==0){
 y=0;
-selec.posselectleft.y=0;
-selec.posselectright.y=0;
-selec.posselectleft.x=0;
-selec.posselectright.x=0;
-imagel=selec.selectionbigleft; ;
-imager=selec.selectionbigright ;
+selec.posselectleft.y=600;
+selec.posselectleft.x=580;
+selec.posselectright.y=600;
+selec.posselectright.x=-40;
 }else if(x==1){
 selec.posselectleft.y=267;
 
@@ -139,6 +139,5 @@ SDL_BlitSurface(imager,NULL,opt.resolution,&(selec.posselectright));
 SDL_Flip(opt.resolution);
 
 }
-
 
 
