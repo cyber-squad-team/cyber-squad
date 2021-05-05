@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<SDL/SDL_image.h>
 #include<SDL/SDL_ttf.h>
+#include<SDL/SDL_mixer.h>
 #include<time.h>
 #include<string.h>
 
@@ -10,10 +11,11 @@
 
 void mainmenu(){
 int continuer=1,x=-1;background back;selection selec;options opt;
-opt=initialisation_parametre();
+opt=initialisation_parametre();int oldvaluex=5;
 back=initialisation_background();
 selec=initialisation_boutons();
 SDL_Event event;affichage(x,selec,back,opt);
+Mix_PlayMusic(opt.musique, -1);
 
 
 while (continuer)
@@ -27,7 +29,17 @@ case SDLK_ESCAPE:
     case SDL_QUIT:
     continuer=0;
     break;
-  
+  case SDL_MOUSEMOTION:
+  oldvaluex=x;
+  x=mouseposimpli(event.motion.x,event.motion.y);
+if((x!=-1)&&(x!=oldvaluex)) {affichage(x,selec,back,opt);}
+
+  break;
+case SDL_MOUSEBUTTONDOWN:
+if(x==0){menuplay(&opt,&continuer,back,selec);}
+else if(x==1){menuoption(&opt,&continuer,back,selec);}
+else {continuer=0;}
+break;
 
 case  SDL_KEYDOWN:
 switch (event.key.keysym.sym)
@@ -46,18 +58,7 @@ if(x==0){menuplay(&opt,&continuer,back,selec);}
 else if(x==1){menuoption(&opt,&continuer,back,selec);}
 else {continuer=0;}
 break;
-
-
-
-
-
 }break;
-
-
-
-
-
-
 }}}}
 
 options initialisation_parametre(){
@@ -66,7 +67,7 @@ a.resolution=SDL_SetVideoMode(1920, 1080,32, SDL_HWSURFACE | SDL_DOUBLEBUF|SDL_R
 a.effect=1;
 a.music=1;
 a.soundlv=4;
-a.son=Mix_LoadWAV("BREF.wav");
+//a.son=Mix_LoadWAV("sound/BREF.wav");
 a.musique=Mix_LoadMUS("sound/music2.mp3");
 a.re=0;
 a.nbdjoueur=1;
@@ -78,9 +79,15 @@ a.inpu[2].right=100;
 a.inpu[2].left=113;
 a.inpu[2].jump=122;
 a.inpu[2].spedd=102;*/
-return a;}
+return a;
+}
 
-
+int mouseposimpli(int x,int y){
+if((715<=x)&&(x<=1236)){
+if ((334<=y)&&(y<=518)){return 0;}
+else if((555<=y)&&(y<=740)){return 1;}
+else if((774<=y)&&(y<=959)){return 2;}}
+return -1;}
 
 
 int next(int x,int nbb,int updown){
@@ -91,6 +98,7 @@ if(((x)==-2)||((x)==-1)){(x)=nbb-1;}}
 return x ;}
 
 void affichage(int x,selection selec,background back,options opt){
+  Mix_PlayChannel(-1, opt.son, 0);
 selec.posselectleft.x=1243;
 selec.posselectright.x=557;
 if(x==0){
@@ -120,7 +128,7 @@ a.background[1]=IMG_Load("photos/options/no selection.png");
 a.background[2]=IMG_Load("photos/options/input/common/nono.png");
 a.background[3]=IMG_Load("photos/play/no selection.png");
 a.background[4]=IMG_Load("photos/options/resolution/no selection.png");
-a.background[5]=IMG_Load("photos/play/new game/no_selection1.png");
+a.background[5]=IMG_Load("photos/play/new game/new.png");
 a.posbackground.x=0;
 a.posbackground.y=0;
 

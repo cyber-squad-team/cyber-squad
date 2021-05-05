@@ -3,11 +3,12 @@
 #include<stdlib.h>
 #include<SDL/SDL_image.h>
 #include<SDL/SDL_ttf.h>
+#include<SDL/SDL_mixer.h>
 #include<time.h>
 #include<string.h>
 void maininput(options opt,int *continuerr,int *continuerrr,background back,selection selec){
 int continuer=1,x=-1;input in;in=initialisationimagesinput();
-SDL_Event event;selectioninput(x,opt,in,back,selec);
+SDL_Event event;selectioninput(x,opt,in,back,selec);int oldvaluex=10;
 while (continuer)
 {while(SDL_PollEvent(&event)){
 
@@ -21,7 +22,26 @@ continuer=0;
 *continuerrr=0;
 *continuerr=0;
     break;
+ 
+            case SDL_MOUSEMOTION:
     
+  oldvaluex=x;
+  x=mouseinput(event.motion.x,event.motion.y);
+if((x!=-1)&&(x!=oldvaluex)) {selectioninput(x,opt,in,back,selec);}
+break;
+
+            case SDL_MOUSEBUTTONDOWN:
+            if(x==0){}
+else if(x==1){}
+else if(x==2){}
+else if(x==3){}
+else if(x==4){}
+else if(x==5){}
+else if(x==6) {continuer=0;x=-1;affichageoptions(x,opt,back,selec);}
+            break;
+       
+  
+
 
 case  SDL_KEYDOWN:
 
@@ -36,6 +56,7 @@ case SDLK_DOWN:
 x=next(x,7,0);
 selectioninput(x,opt,in,back,selec);
 break;
+
 case SDLK_RETURN:
 if(x==0){}
 else if(x==1){}
@@ -86,6 +107,7 @@ SDL_BlitSurface(a.right,NULL,opt.resolution,&(a.posright));
 SDL_BlitSurface(a.left,NULL,opt.resolution,&(a.posleft));
 SDL_BlitSurface(a.jump,NULL,opt.resolution,&(a.posjump));
 SDL_BlitSurface(a.secondplayer,NULL,opt.resolution,&(a.possecondplayer));
+
 }
 
 
@@ -93,6 +115,7 @@ SDL_BlitSurface(a.secondplayer,NULL,opt.resolution,&(a.possecondplayer));
 
 
 void selectioninput(int x,options opt,input in,background back,selection selec){
+    Mix_PlayChannel(-1, opt.son, 0);
 SDL_BlitSurface(back.background[2],NULL,opt.resolution,&(back.posbackground));
 selec.posselectleft.x=1351;int y=1;
 selec.posselectright.x=575;
@@ -139,5 +162,23 @@ SDL_BlitSurface(imager,NULL,opt.resolution,&(selec.posselectright));
 SDL_Flip(opt.resolution);
 
 }
+
+int mouseinput(int x,int y){
+
+if((552<=y)&&(y<=774)&&(57<=x)&&(x<=583)){return 0;}
+
+else if((1217<=x)&&(x<=1352)){
+if     ((252<=y)&&(y<=393)){return 1;}
+else if((410<=y)&&(y<=550)){return 2;}
+else if((578<=y)&&(y<=717)){return 3;}
+else if((735<=y)&&(y<=873)){return 4;}
+else if((903<=y)&&(y<=1042)){return 5;}}
+
+else if((111<=x)&&(x<=244)&&(941<=y)&&(y<=1042)){return 6;}
+
+
+
+
+return -1;}
 
 
